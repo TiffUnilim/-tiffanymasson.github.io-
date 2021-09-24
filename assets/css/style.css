@@ -1,0 +1,368 @@
+/* Tiffany MASSON, UE 234, periode 1, exercice 17, 18 et 19 */
+
+/* reinitialisation */
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*********************************************************************/
+/* elements communs */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(110deg, rgb(214, 223, 178) 0%, rgb(235, 241, 210) 15%, rgb(254, 255, 248) 40%);
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.6rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul { 
+    list-style: circle inside; 
+    margin-left: 1rem;
+} 
+a { 
+    color: #889743; 
+    text-decoration: none; 
+}  
+a:hover { 
+    color: #353b1a;  
+    text-decoration: none; 
+} 
+a:after { 
+    color: #889743;  
+    text-decoration: none; 
+} 
+
+/*********************************************************************/
+/* nav */
+nav {
+    position: fixed; 
+    top: 10rem; 
+    right: 0;
+}
+.menu-sticky-items { 
+    list-style: none inside; 
+    margin: 0; 
+} 
+.menu-sticky-item { 
+    position: relative; 
+    height: 5rem; 
+}
+.menu-sticky-icon { 
+    background-color: #889743; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    width: 5rem; 
+    height: 5rem; 
+    display: inline-block; 
+    margin-right: .5rem; 
+    border: 8px solid #889743; 
+}  
+.menu-sticky-icon-experiences { background-image: url(../images/experience.png); }
+.menu-sticky-icon-formations { background-image: url(../images/formation.png); }
+.menu-sticky-icon-competences { background-image: url(../images/competence.png); }
+.menu-sticky-icon-loisirs { background-image: url(../images/loisir.png); }
+.menu-sticky-link { 
+    display: flex;
+    position: absolute;  
+    top: 0; 
+    left: -5rem;  
+    width: 17rem;
+    background-color: #9fa583;  
+    align-items: center; 
+    padding-right: 1rem; 
+} 
+.menu-sticky-link:hover { 
+    font-size: 1.5rem;
+    color: #353b1a; 
+    left: -17rem; 
+} 
+.menu-sticky-link:hover .menu-sticky-icon { 
+    background-color: #82866c; 
+    border-color: #82866cef; 
+}
+
+/*********************************************************************/
+/* Header */
+.header {
+    max-width: 80rem;
+    margin : 1rem auto;
+    border-bottom: 5px solid #889743;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.header-title{
+    color: #353b1a;    
+}
+
+.header-subtitle{
+    color: #889743;
+}
+
+/*********************************************************************/
+/* main */
+.main-container{
+    display:flex;
+    flex-basis: 75%;
+    flex-direction: row-reverse;
+
+    max-width: 80rem;
+    margin : 1rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.informations {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #889743;
+}
+
+
+/*********************************************************************/
+/* aside */
+.aside{
+    flex-basis: 25%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 3px solid #889743;
+}
+.aside-photo{    
+    margin-right: auto; 
+    margin-left: auto;
+    margin-bottom: 1rem;
+}
+.aside-informations {
+    margin-bottom: 1rem; 
+    color: #666; 
+    text-transform: uppercase; 
+    font-size: 1.3rem;
+}
+.aside-contact{
+    display: flex;
+    background-color: #889743;
+    color: #fff; 
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #00000000; 
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;    
+    margin-bottom: 1rem; 
+    transition: all .2s;
+    align-items : center;
+    justify-content: center;
+}
+.aside-contact:hover {
+    background-color: #88974365;
+    color: #353b1a; 
+    transition: all .2s;
+}
+.aside-contact:before {
+    display: inline-block; 
+    content:''; 
+    background: transparent url(../images/contact.png) center no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    transition: background .2s;
+} 
+.aside-contact:hover:before {
+    background-image: url(../images/contact2.png);
+}
+.aside-title {
+    color: #889743;
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 1000;
+    font-size: 1.5rem;
+    text-transform: uppercase; 
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    border-top: 2px solid #889743;
+    padding-top: 1rem;
+}
+.aside-networks {
+    list-style: none inside;  
+    margin-left: 0; 
+    font-size: 1.5rem;
+}
+.aside-networks-link{
+    display: flex; 
+    align-items: center;
+    padding: .25rem .5rem;
+}
+.aside-networks-link:before {
+    content:''; 
+    display: inline-block; 
+    width: 1.75rem; 
+    height: 1.5rem; 
+    margin-right: .25rem; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: contain;
+    background-color: transparent; 
+}
+.aside-networks-link.aside-networks-link-FB:before {background-image: url(../images/fb.png);  }
+.aside-networks-link.aside-networks-link-LinkedIn:before {background-image: url(../images/linkedin.png);  }
+.aside-networks-link.aside-networks-link-viadeo:before {background-image: url(../images/viadeo.png);  }
+
+
+/*********************************************************************/
+/* Expériences/Formations/Compétences/Loisirs */
+.informations-title {
+    color: #889743;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase; 
+    margin-bottom: 2rem;
+}
+
+.informations-details {
+    margin-bottom: 1rem;
+}
+.informations-details-title{
+    color: black;
+    font-weight: normal;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+.informations-details-employer {
+    font-weight: bold; 
+    color: #353b1a; 
+    margin-bottom: .6rem;
+    margin-left: .6rem;
+}
+.informations-details-date {
+    font-style: italic; 
+}
+.informations-details:after {
+    display: inline-block; 
+    content:'';
+    width: 25%;
+    height: 1.5rem;
+    border-top : 1px solid #889743;
+} 
+.informations-details:last-of-type:after{
+    border-top: none;
+}
+
+
+.informations-employer{
+    display : flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,.5);
+    margin: 1rem; 
+    padding: 1rem;
+}
+.informations-employer-name {
+    font-weight: bold; 
+    color: #353b1a; 
+    flex: 0 0 100%; 
+}
+.informations-employer-details{
+    flex: 0 0 33.33%;
+}
+.informations-employer-details-link {
+    display: flex; 
+    align-items: center;
+    padding: 0.5rem; 
+}
+.informations-employer-details-link:before {
+    content:''; 
+    display: inline-block; 
+    width: 2rem; 
+    height: 2rem; 
+    margin-right: .5rem; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: contain;
+    background-color: transparent; 
+    background-image: url(../images/www.png);    
+}
+.informations-employer-details-link:hover:before{
+    background-image: url(../images/www2.png);
+}
+.informations-employer-details-phone{
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+
+/*********************************************************************/
+/* competences */
+.informations-competences{
+    display: flex;
+    width: 50rem;
+    justify-content: space-between;
+    margin-top : 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.progress-container{
+    display: inline-block;
+    width: 10rem;
+    height: 1rem;
+    border: 1px solid #82866c;
+    overflow: hidden;
+    transition: transform .2s;
+}
+.progress-container:hover {
+    transform: scale(1.2); 
+    transition: transform .2s;
+}
+.progress-bar{
+    display: block;
+    width: 50%;
+    height: 1rem;
+    background-color: rgba(204, 204, 204, 0.795);
+    opacity: 0.8;
+    background-size: 31.6px 20px;
+    background-image:  repeating-linear-gradient(to right, #ccc, #ccc 1px, #889743 1px, #889743);
+}
+.progress-container:hover > .progress-bar {
+    animation: niveau 1s linear;   
+}
+@keyframes niveau{
+    0%{ 
+        width: 0%;
+    } 
+}
+
+/*********************************************************************/
+/* loisirs */
+.loisirs-contenus {  
+    display: flex;
+    flex-direction: row;
+}
+
+.loisirs-contenu {  
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+.loisirs-contenu:hover > .loisir-photo {  
+    background: rgba(182, 199, 119, 0.2);
+    box-shadow: 0px 0px 40px 10px rgba(182, 199, 119, 0.432);
+}
+.loisir-photo {
+    display: block;  
+    margin-left: auto;
+    margin-right: auto;
+    width: 4rem; 
+    height: 4rem; 
+}
